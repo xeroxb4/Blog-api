@@ -1,12 +1,14 @@
 import express from 'express';
 import blogRouter from './Routes/blog_routes.js';
-
+import 'dotenv/config'
+import { dbConnection } from './config/db.js';
 
 
 
 // Create Express App
 const app = express();
 
+dbConnection();
 
 // Use Router
 app.use(express.json());
